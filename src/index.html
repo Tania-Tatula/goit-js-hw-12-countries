@@ -6,40 +6,99 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Webpack Starter Kit</title>
 
-    <!-- Don't forget to delete this style tag. -->
     <style>
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      html {
+        box-sizing: border-box;
       }
 
-      .intro {
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+        /*
+   * CSS image reference example.
+   */
+        background-image: url('./images/bg-pattern.png');
+      }
+
+      .country {
+        display: inline-block;
+        width: auto;
+        border: 1px solid #ff8c00;
+        padding: 10px;
+        margin-left: calc((100% - 10px) / 3);
+        background-color: rgb(196, 196, 230);
+      }
+
+      .countries_card {
+        display: flex;
+      }
+
+      .flag {
+        max-width: 300px;
+        margin-left: 20px;
+      }
+
+      h2,
+      h1 {
         text-align: center;
       }
 
-      .intro h1 {
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 40px;
+      .country_information {
+        font-family: sans-serif;
+        color: black;
+        font-size: 20px;
       }
 
-      .intro img {
-        display: block;
-        max-width: 100%;
-        height: auto;
+      .languages {
+        font-family: sans-serif;
+        color: black;
+        font-size: 18px;
+      }
+
+      .inform {
+        width: auto;
+      }
+
+      .search-input {
+        font-size: 20px;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 20px;
+        margin-left: calc((100% - 25% - 6px) / 2);
+        width: 23%;
+        height: 15px;
+        border: 1px solid #ff8c00;
       }
     </style>
+    
   </head>
 
   <body>
     <article class="intro">
-      <h1>Webpack starter kit</h1>
+      <h1>Сountry search</h1>
+      <div>
+        <input
+          type="text"
+          size="30"
+          class="search-input"
+          name="string"
+          placeholder="Name of country"
+          pattern="^[a-zA-Z]+$"
+        />
+      </div>
 
+      <div class="resolt"></div>
+
+      <div id="app"></div>
       <!-- HTML image reference example. -->
-      <img src="./images/intro.png" alt="" width="640" />
     </article>
   </body>
 </html>
